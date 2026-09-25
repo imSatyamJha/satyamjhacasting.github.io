@@ -6,317 +6,391 @@
   <title>Satyam Jha | Casting Director</title>
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: #151c2c;
-      --accent: #38bdf8;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --badge-bg: #0284c7;
-      --tag-bg: #1e293b;
+      --bg-dark: #121212;
+      --bg-card: #1e1e1e;
+      --bg-hero: #0a1917;
+      --text-main: #ffffff;
+      --text-muted: #a0a0a0;
+      --accent-blue: #0088cc;
+      --border-color: #333333;
     }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       line-height: 1.6;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+
+    /* Navbar */
     header {
-      text-align: center;
-      padding: 30px 0;
-      border-bottom: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border-color);
     }
-    h1 {
-      font-size: 2.8rem;
-      margin: 0;
+
+    .logo-box {
+      border: 1px solid var(--text-main);
+      padding: 8px 16px;
+      font-weight: 700;
       letter-spacing: 2px;
+      font-size: 1.1rem;
       text-transform: uppercase;
     }
-    .tagline {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      margin-top: 5px;
-    }
+
     .imdb-btn {
-      display: inline-block;
       background: #f5c518;
       color: #000;
       font-weight: bold;
-      padding: 6px 14px;
+      padding: 8px 16px;
       border-radius: 4px;
       text-decoration: none;
-      margin-top: 15px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
-    section {
-      margin-top: 35px;
-      background: var(--card-bg);
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-hero) 0%, var(--bg-dark) 100%);
+      padding: 80px 20px;
+      text-align: center;
     }
-    h2 {
-      color: var(--accent);
-      margin-top: 0;
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .btn-solid {
+      background: #ffffff;
+      color: #000000;
+      padding: 14px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    /* Section Styling */
+    .section-container {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title-large {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .about-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    /* Category List Section (01, 02, 03) */
+    .category-item {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 25px;
+    }
+
+    .number {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .category-title {
       font-size: 1.5rem;
-      border-bottom: 2px solid #2d3748;
-      padding-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
+
+    .checkout-link {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      display: inline-block;
+      border-bottom: 1px solid var(--accent-blue);
+      padding-bottom: 2px;
+    }
+
+    /* Grid Layout for Cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
+      gap: 20px;
+      margin-top: 20px;
     }
+
     .card {
-      background: #0b0f19;
-      padding: 16px;
+      background: var(--bg-card);
+      padding: 20px;
       border-radius: 8px;
-      border-left: 4px solid var(--accent);
+      border: 1px solid #2a2a2a;
     }
+
     .card.upcoming {
-      border-left-color: #f59e0b;
+      border-left: 4px solid #f59e0b;
     }
-    .card h3 {
-      margin: 0 0 5px 0;
+
+    .card h4 {
       font-size: 1.1rem;
-      color: #fff;
+      margin-top: 8px;
+      margin-bottom: 4px;
     }
+
     .card p {
-      margin: 0;
       color: var(--text-muted);
-      font-size: 0.88rem;
+      font-size: 0.85rem;
     }
+
     .badge {
-      display: inline-block;
-      background: var(--badge-bg);
-      color: white;
       font-size: 0.7rem;
-      padding: 2px 6px;
+      background: #2a2a2a;
+      color: var(--accent-blue);
+      padding: 3px 8px;
       border-radius: 4px;
-      margin-bottom: 6px;
+      text-transform: uppercase;
       font-weight: bold;
     }
-    .badge.upcoming-badge {
-      background: #d97706;
-    }
-    .brands-container {
+
+    /* Brand Tags */
+    .brands-flex {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 15px;
     }
+
     .brand-tag {
-      background: var(--tag-bg);
-      color: var(--text-main);
-      padding: 6px 12px;
+      background: #222;
+      border: 1px solid #333;
+      padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
-      border: 1px solid #334155;
+      color: var(--text-muted);
     }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #0b0f19;
-      padding: 12px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      margin-top: 15px;
-    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 40px 0 20px 0;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border-color);
       color: var(--text-muted);
       font-size: 0.85rem;
     }
-    a.email-link {
-      color: var(--accent);
+
+    footer a {
+      color: #ffffff;
       text-decoration: none;
-    }
-    a.email-link:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- Header -->
-    <header>
-      <h1>SATYAM JHA</h1>
-      <div class="tagline">CASTING DIRECTOR</div>
-      <p style="color: var(--text-muted); margin-top: 5px;">Films | Web Series | TV Commercials</p>
-      <a href="https://www.imdb.com/name/nm11658104/" target="_blank" class="imdb-btn">IMDb Profile ↗</a>
-    </header>
+  <!-- Top Navigation Bar -->
+  <header>
+    <div class="logo-box">SATYAM JHA</div>
+    <a href="https://www.imdb.com/name/nm11658104/" target="_blank" class="imdb-btn">IMDb Profile ↗</a>
+  </header>
 
-    <!-- Experience Section -->
-    <section>
-      <h2>About & Experience</h2>
-      <p>Casting professional with <strong>over 6 years of experience</strong> in the film & media industry, including <strong>4 years affiliated with Mukesh Chhabra Casting Company (MCCC)</strong>.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>The Future Of Casting Is Here!</h1>
+    <div class="hero-buttons">
+      <a href="#our-work" class="btn-solid">Explore Our Work</a>
+      <a href="mailto:thatismesatyam@gmail.com" class="btn-outline">Submit Your Profile</a>
+    </div>
+  </section>
 
-    <!-- Upcoming Projects Section -->
-    <section>
-      <h2>Upcoming Projects</h2>
-      <div class="grid">
-        <div class="card upcoming">
-          <span class="badge upcoming-badge">NETFLIX SERIES</span>
-          <h3>Black Warrant (Season 2)</h3>
-          <p>Status: Upcoming</p>
-        </div>
+  <!-- About Section -->
+  <section class="section-container">
+    <h2 class="section-title-large">Our Work</h2>
+    <p class="about-text">
+      Casting Director based in Mumbai, India with over <strong>6+ years of experience</strong> in feature films, OTT web series, and TV commercials.
+    </p>
 
-        <div class="card upcoming">
-          <span class="badge upcoming-badge">FEATURE FILM</span>
-          <h3>Kabir Khan x Kartik Aaryan Project</h3>
-          <p>Sports Drama / Upcoming</p>
-        </div>
+    <!-- Numbered Work Showcase -->
+    <div id="our-work">
+      
+      <!-- 01 Upcoming & Feature Films -->
+      <div class="category-item">
+        <div class="number">01</div>
+        <div class="category-title">Feature Films & Upcoming</div>
+        <a href="#films-list" class="checkout-link">Checkout Our Work &rarr;</a>
 
-        <div class="card upcoming">
-          <span class="badge upcoming-badge">BIOPIC</span>
-          <h3>Dada (Sourav Ganguly Biopic)</h3>
-          <p>Status: Upcoming</p>
+        <div id="films-list" class="grid">
+          <div class="card upcoming">
+            <span class="badge" style="color:#f59e0b;">UPCOMING</span>
+            <h4>Kabir Khan x Kartik Aaryan Project</h4>
+            <p>Sports Drama / Upcoming</p>
+          </div>
+          <div class="card upcoming">
+            <span class="badge" style="color:#f59e0b;">BIOPIC</span>
+            <h4>Dada (Sourav Ganguly Biopic)</h4>
+            <p>Status: Upcoming</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Border 2</h4>
+            <p>Releasing 23rd Jan 2026</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Jewel Thief</h4>
+            <p>Siddharth Anand's Production</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Azaad</h4>
+            <p>Ajay Devgn / RSVP Films</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Maalik</h4>
+            <p>Starring Rajkummar Rao</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Bharat Bhagya Viddhaata</h4>
+            <p>The Unseen Heroes</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>VVAN</h4>
+            <p>Force of the Forest</p>
+          </div>
+          <div class="card">
+            <span class="badge">FEATURE FILM</span>
+            <h4>Arranged Love</h4>
+            <p>Original Movie</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Filmography / Projects Section -->
-    <section>
-      <h2>Films & Web Series</h2>
-      <div class="grid">
+      <!-- 02 Web Series -->
+      <div class="category-item">
+        <div class="number">02</div>
+        <div class="category-title">Web Series & OTT</div>
+        <a href="#series-list" class="checkout-link">Checkout Our Work &rarr;</a>
 
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>Border 2</h3>
-          <p>Releasing 23rd Jan 2026</p>
+        <div id="series-list" class="grid">
+          <div class="card upcoming">
+            <span class="badge" style="color:#f59e0b;">NETFLIX</span>
+            <h4>Black Warrant (Season 2)</h4>
+            <p>Status: Upcoming</p>
+          </div>
+          <div class="card">
+            <span class="badge">NETFLIX</span>
+            <h4>Black Warrant (Season 1)</h4>
+            <p>From Creator of Sacred Games</p>
+          </div>
+          <div class="card">
+            <span class="badge">NETFLIX</span>
+            <h4>Dabba Cartel</h4>
+            <p>Netflix Original Series</p>
+          </div>
+          <div class="card">
+            <span class="badge">AMAZON MINITV</span>
+            <h4>Jab We Matched</h4>
+            <p>Mini Series</p>
+          </div>
+          <div class="card">
+            <span class="badge">SONYLIV</span>
+            <h4>Zindaginama</h4>
+            <p>6 Stories of Hope & Strength</p>
+          </div>
         </div>
-
-        <div class="card">
-          <span class="badge">NETFLIX SERIES</span>
-          <h3>Black Warrant (Season 1)</h3>
-          <p>From the Creator of Sacred Games</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">NETFLIX FILM</span>
-          <h3>Jewel Thief</h3>
-          <p>Siddharth Anand's Production</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>Azaad</h3>
-          <p>Ajay Devgn / RSVP Films</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>Maalik</h3>
-          <p>Starring Rajkummar Rao</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">NETFLIX SERIES</span>
-          <h3>Dabba Cartel</h3>
-          <p>Netflix Original Series</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>Bharat Bhagya Viddhaata</h3>
-          <p>The Unseen Heroes</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>VVAN</h3>
-          <p>Force of the Forest</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">FEATURE FILM</span>
-          <h3>Arranged Love</h3>
-          <p>Original Movie</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">AMAZON MINITV</span>
-          <h3>Jab We Matched</h3>
-          <p>Mini Series</p>
-        </div>
-
-        <div class="card">
-          <span class="badge">SONYLIV ORIGINAL</span>
-          <h3>Zindaginama</h3>
-          <p>6 Stories of Hope & Strength</p>
-        </div>
-
       </div>
-    </section>
 
-    <!-- Brand Commercials Section -->
-    <section>
-      <h2>Brands & Commercials</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Cast for major commercial campaigns and top national brands:</p>
-      <div class="brands-container">
-        <span class="brand-tag">Google</span>
-        <span class="brand-tag">Meta</span>
-        <span class="brand-tag">Flipkart</span>
-        <span class="brand-tag">Swiggy</span>
-        <span class="brand-tag">Zepto</span>
-        <span class="brand-tag">PhonePe</span>
-        <span class="brand-tag">Dream11</span>
-        <span class="brand-tag">KFC</span>
-        <span class="brand-tag">Colgate</span>
-        <span class="brand-tag">Goibibo</span>
-        <span class="brand-tag">Glow & Lovely</span>
-        <span class="brand-tag">Pond's</span>
-        <span class="brand-tag">Boost</span>
-        <span class="brand-tag">Vivel</span>
-        <span class="brand-tag">Mahindra Thar</span>
-        <span class="brand-tag">Vi (Vodafone Idea)</span>
-        <span class="brand-tag">Himalaya</span>
-        <span class="brand-tag">Oreo</span>
-        <span class="brand-tag">Thums Up Charged</span>
-        <span class="brand-tag">Tata Play Binge</span>
-        <span class="brand-tag">Saridon</span>
-        <span class="brand-tag">Complan</span>
-        <span class="brand-tag">Head & Shoulders</span>
-        <span class="brand-tag">Tasva</span>
-        <span class="brand-tag">Santoor</span>
+      <!-- 03 Ad Commercials -->
+      <div class="category-item">
+        <div class="number">03</div>
+        <div class="category-title">Ad Commercials</div>
+        <a href="#brands-list" class="checkout-link">Checkout Our Work &rarr;</a>
+
+        <div id="brands-list" class="brands-flex">
+          <span class="brand-tag">Google</span>
+          <span class="brand-tag">Meta</span>
+          <span class="brand-tag">Flipkart</span>
+          <span class="brand-tag">Swiggy</span>
+          <span class="brand-tag">Zepto</span>
+          <span class="brand-tag">PhonePe</span>
+          <span class="brand-tag">Dream11</span>
+          <span class="brand-tag">KFC</span>
+          <span class="brand-tag">Colgate</span>
+          <span class="brand-tag">Goibibo</span>
+          <span class="brand-tag">Glow & Lovely</span>
+          <span class="brand-tag">Pond's</span>
+          <span class="brand-tag">Boost</span>
+          <span class="brand-tag">Vivel</span>
+          <span class="brand-tag">Mahindra Thar</span>
+          <span class="brand-tag">Vi (Vodafone Idea)</span>
+          <span class="brand-tag">Himalaya</span>
+          <span class="brand-tag">Oreo</span>
+          <span class="brand-tag">Thums Up Charged</span>
+          <span class="brand-tag">Tata Play Binge</span>
+          <span class="brand-tag">Saridon</span>
+          <span class="brand-tag">Complan</span>
+          <span class="brand-tag">Head & Shoulders</span>
+          <span class="brand-tag">Tasva</span>
+          <span class="brand-tag">Santoor</span>
+        </div>
       </div>
-    </section>
 
-    <!-- Actor Submissions -->
-    <section>
-      <h2>For Actors & Profile Submissions</h2>
-      <p>Actors & Fresh Talent can submit headshots, CV/Profile, and audition reels for upcoming casting calls.</p>
-      <a href="mailto:thatismesatyam@gmail.com" class="btn">Submit For Auditions</a>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Info -->
-    <section>
-      <h2>Contact & Location</h2>
-      <p><strong>Email:</strong> <a href="mailto:thatismesatyam@gmail.com" class="email-link">thatismesatyam@gmail.com</a></p>
-      <p><strong>Location:</strong> Mumbai, India</p>
-    </section>
+  <!-- Contact & Submissions -->
+  <section class="section-container" style="padding-top: 0;">
+    <h2 class="section-title-large">For Actors & Submissions</h2>
+    <p class="about-text">
+      Send your Headshots, Profile/CV, and Audition Reels to:<br>
+      <a href="mailto:thatismesatyam@gmail.com" style="color: var(--accent-blue); text-decoration: none; font-weight: bold;">thatismesatyam@gmail.com</a>
+    </p>
+  </section>
 
-    <footer>
-      &copy; Satyam Jha Casting. All rights reserved.
-    </footer>
-
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Satyam Jha Casting | Mumbai, India</p>
+  </footer>
 
 </body>
 </html>
